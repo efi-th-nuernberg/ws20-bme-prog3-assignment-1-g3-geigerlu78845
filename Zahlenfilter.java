@@ -1,29 +1,42 @@
 class Zahlenfilter {
 
   public static void main(String[] args) {
-    for(int i = 1; i <= 200; i++)
+    for(int current = 1; current <= 200; current++)
     {
-      int result = i + (i-1); //berechnet Addition des Vorgängers mit der aktuellen Zahl
-
-      if(i%5 == 0 || i%10 == 9 || result%3 == 0) //Abfrage ob Sonderfälle vorhanden
+      if((result_dividable_by_three(current) || dividable_by_five(current) || ends_with_9(current)) == false) //Abfrage ob Sonderfälle vorhanden
       {
-        if(i%5 == 0)
-        {
-          System.out.println("i = " +i+ " - ZAHL ist durch 5 teilbar!");
-        }
-        if (i%10 == 9)
-        {
-          System.out.println("i = " +i+ " - ZAHL endet auf 9!");
-        }
-        if (result%3 == 0)
-        {
-        System.out.println("i = " +i+ " - ZAHL und VORGÄNGER addiert ergeben " +result+ " und " +result+ " ist durch 3 teilbar");
-        }
-      }
-      else //keine Sonderfälle
-      {
-        System.out.println("i = " + i);
+        System.out.println(current);
       }
     }  
   }
+
+  private static boolean result_dividable_by_three(int current)
+  {
+    int previous_plus_current = current + (current-1);
+    
+    if(previous_plus_current%3 == 0)
+    {
+       System.out.println(current+ " - ZAHL und VORGÄNGER addiert ergeben " +previous_plus_current+ " und " +previous_plus_current+ " ist durch 3 teilbar");
+      return true;
+    }
+    return false;
+  }
+
+  private static boolean dividable_by_five(int current){
+    if(current%5 == 0) 
+    {
+      System.out.println(current+ " - ZAHL ist durch 5 teilbar!");
+      return true;
+    }
+    return false;
+  }
+
+  private static boolean ends_with_9(int current){
+    if (current%10 == 9)
+        {
+          System.out.println(current+ " - ZAHL endet auf 9!");
+          return true;
+        }
+        return false;
+  } 
 }
