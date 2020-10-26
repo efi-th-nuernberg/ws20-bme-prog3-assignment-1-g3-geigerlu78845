@@ -13,7 +13,7 @@ class Zahlenfilter {
       }
       else if ((i + (i-1))%3 == 0)
       {
-        System.out.println("i = " +i+ " - ZAHL und VORGÄNGER addiert ergeben ERGEBNIS und ERGEBNIS ist durch 3 teilbar");
+        System.out.println("i = " +i+ " - ZAHL und VORGÄNGER addiert ergeben " +(i+(i-1))+ " und " +(i+(i-1))+ " ist durch 3 teilbar");
       }
       else
       {
