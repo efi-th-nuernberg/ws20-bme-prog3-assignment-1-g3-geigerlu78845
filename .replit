@@ -1,2 +1,3 @@
 language = "java"
-run = "javac Main.java && java Main"
+run = "javac Zahlenfilter.java && java Zahlenfilter"
+
